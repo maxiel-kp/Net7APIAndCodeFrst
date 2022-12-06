@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentAPI.Models", "Studen
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentAPI.DALs", "StudentAPI.DALs\StudentAPI.DALs.csproj", "{7B9E7B3D-4DC1-4565-B8D9-7997E89C959D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentAPI.Services", "StudentAPI.Services\StudentAPI.Services.csproj", "{A2E30550-9A87-4428-8E90-A0008DCC113F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{7B9E7B3D-4DC1-4565-B8D9-7997E89C959D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B9E7B3D-4DC1-4565-B8D9-7997E89C959D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B9E7B3D-4DC1-4565-B8D9-7997E89C959D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2E30550-9A87-4428-8E90-A0008DCC113F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2E30550-9A87-4428-8E90-A0008DCC113F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2E30550-9A87-4428-8E90-A0008DCC113F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2E30550-9A87-4428-8E90-A0008DCC113F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
