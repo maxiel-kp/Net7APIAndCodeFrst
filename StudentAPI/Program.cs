@@ -1,5 +1,6 @@
 
 using Microsoft.EntityFrameworkCore;
+using StudentAPI.Controllers.Extensions;
 using StudentAPI.DALs;
 
 namespace StudentAPI
@@ -14,10 +15,13 @@ namespace StudentAPI
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-            builder.Services.AddDbContext<PracticeDbContext>(options =>
-            {
-                options.UseSqlServer(builder.Configuration.GetConnectionString("MyWorldDbConnection"));
-            });
+
+            //ServiceCollectionExtensions
+            builder.Services.AddRepositories()
+                            .AddUnitOfWork()
+                            .AddBusinessServices()
+                            .AddDatabase(builder.Configuration);
+
             var app = builder.Build();
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())

@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\StudentAPI.DALs\StudentAPI.DALs.csproj" />
+    <ProjectReference Include="..\StudentAPI.Services\StudentAPI.Services.csproj" />
   </ItemGroup>
 
 </Project>
