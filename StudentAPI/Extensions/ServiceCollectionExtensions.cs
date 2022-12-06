@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using StudentAPI.DALs;
+using StudentAPI.DALs.Queries;
 using StudentAPI.Services;
 
 namespace StudentAPI.Controllers.Extensions
@@ -12,7 +13,7 @@ namespace StudentAPI.Controllers.Extensions
         {
             return services
                 .AddScoped(typeof(IAsyncRepository<>), typeof(RepositoryBase<>))
-                //.AddScoped<IUserRepository, UserRepository>()
+                .AddScoped<IStudentQueryRepository, StudentQueryRepository>()
                 //.AddScoped<IDepartmentRepository, DepartmentRepository>()
                 ;
         }

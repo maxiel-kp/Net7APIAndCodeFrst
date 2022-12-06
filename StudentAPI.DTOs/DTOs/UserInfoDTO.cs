@@ -1,7 +1,12 @@
-﻿
-namespace StudentAPI.Models
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace StudentAPI.DTOs.DTOs
 {
-    public class Students 
+    public class UserInfoDTO
     {
         public int Id { get; set; } //Auto increatment
         public string? FirstName { get; set; }

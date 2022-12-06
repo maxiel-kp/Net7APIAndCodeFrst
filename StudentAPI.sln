@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33122.133
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentAPI.Controllers", "StudentAPI\StudentAPI.Controllers.csproj", "{C354CFAE-A6B6-4955-A8B9-FDBD470587F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentAPI.Controllers", "StudentAPI\StudentAPI.Controllers.csproj", "{C354CFAE-A6B6-4955-A8B9-FDBD470587F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentAPI.Models", "StudentAPI.Models\StudentAPI.Models.csproj", "{95C5C33B-E211-4CE8-93B9-E2DF8BCBF770}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentAPI.Models", "StudentAPI.Models\StudentAPI.Models.csproj", "{95C5C33B-E211-4CE8-93B9-E2DF8BCBF770}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentAPI.DALs", "StudentAPI.DALs\StudentAPI.DALs.csproj", "{7B9E7B3D-4DC1-4565-B8D9-7997E89C959D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentAPI.DALs", "StudentAPI.DALs\StudentAPI.DALs.csproj", "{7B9E7B3D-4DC1-4565-B8D9-7997E89C959D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentAPI.Services", "StudentAPI.Services\StudentAPI.Services.csproj", "{A2E30550-9A87-4428-8E90-A0008DCC113F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentAPI.Services", "StudentAPI.Services\StudentAPI.Services.csproj", "{A2E30550-9A87-4428-8E90-A0008DCC113F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentAPI.DTOs", "StudentAPI.DTOs\StudentAPI.DTOs.csproj", "{D6B4C192-B9C6-4DF7-9819-7968C9FF8484}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{A2E30550-9A87-4428-8E90-A0008DCC113F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A2E30550-9A87-4428-8E90-A0008DCC113F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A2E30550-9A87-4428-8E90-A0008DCC113F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6B4C192-B9C6-4DF7-9819-7968C9FF8484}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6B4C192-B9C6-4DF7-9819-7968C9FF8484}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6B4C192-B9C6-4DF7-9819-7968C9FF8484}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6B4C192-B9C6-4DF7-9819-7968C9FF8484}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\StudentAPI.DALs\StudentAPI.DALs.csproj" />
+    <ProjectReference Include="..\StudentAPI.DTOs\StudentAPI.DTOs.csproj" />
   </ItemGroup>
 
 </Project>

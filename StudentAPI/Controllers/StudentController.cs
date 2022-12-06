@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using StudentAPI.DALs;
 using StudentAPI.Models;
+using StudentAPI.DTOs.Requests;
+using StudentAPI.Services;
 
 namespace MaxCodeFirst.API.Controllers
 {
@@ -10,10 +12,12 @@ namespace MaxCodeFirst.API.Controllers
     public class StudentController : ControllerBase
     {
         private readonly PracticeDbContext _dbContext;
+        private readonly IStudentService _service;
 
-        public StudentController(PracticeDbContext dbContext)
+        public StudentController(PracticeDbContext dbContext, IStudentService service)
         {
             _dbContext = dbContext;
+            _service = service;
         }
 
         [HttpGet]
@@ -59,6 +63,14 @@ namespace MaxCodeFirst.API.Controllers
             _dbContext.Students.Remove(studentToDelete);
             await _dbContext.SaveChangesAsync();
             return NoContent();
+        }
+
+
+        [HttpGet("get_by_service")]
+        public async Task<IActionResult> GetByService([FromQuery] GetUserRequest request)
+        {
+            var users = await _service.SearchAsync(request);
+            return Ok(users);
         }
     }
 }

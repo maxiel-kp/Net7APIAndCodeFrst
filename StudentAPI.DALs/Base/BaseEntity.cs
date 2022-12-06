@@ -2,7 +2,7 @@
 
 namespace StudentAPI.DALs.Base
 {
-    public abstract class BaseEntity
+    public  class BaseEntity
     {
         private List<BaseDomainEvent> _events;
         public IReadOnlyList<BaseDomainEvent> Events => _events.AsReadOnly();
