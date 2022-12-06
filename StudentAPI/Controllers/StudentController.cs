@@ -24,7 +24,7 @@ namespace MaxCodeFirst.API.Controllers
         } 
 
         [HttpGet]
-        [Route("get-student-by-id")]
+        [Route("get_student_by_id")]
         public async Task<IActionResult> GetStudentByIdAsync(int id)
         {
             var student = await _dbContext.Students.FindAsync(id);
@@ -36,7 +36,7 @@ namespace MaxCodeFirst.API.Controllers
         {
             _dbContext.Students.Add(student);
             await _dbContext.SaveChangesAsync();
-            return Created($"/get-student-by-id?id={student.Id}", student);
+            return Created($"/get_student_by_id?id={student.Id}", student);
         }
 
         [HttpPut]
@@ -44,7 +44,7 @@ namespace MaxCodeFirst.API.Controllers
         {
             _dbContext.Students.Update(studentToUpdate);
             await _dbContext.SaveChangesAsync();
-            return NoContent();
+            return Created($"/get_student_by_id?id={studentToUpdate.Id}", studentToUpdate);
         }
 
         [Route("{id}")]
