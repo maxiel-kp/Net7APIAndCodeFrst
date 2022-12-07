@@ -1,9 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using MediatR;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using StudentAPI.DALs;
 using StudentAPI.DALs.Queries;
-using StudentAPI.Services;
+using StudentAPI.Services.Queries;
 
 namespace StudentAPI.Controllers.Extensions
 {
@@ -29,7 +30,8 @@ namespace StudentAPI.Controllers.Extensions
         public static IServiceCollection AddBusinessServices(this IServiceCollection services
            )
         {
-            return services.AddScoped<IStudentService,StudentService>();
+            return services
+                .AddScoped<IStudentService,StudentService>();
         }
     }
 }

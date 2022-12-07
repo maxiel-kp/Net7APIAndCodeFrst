@@ -7,11 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Responses\" />
+    <Folder Include="Commands\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="MediatR" Version="11.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\StudentAPI.DTOs\StudentAPI.DTOs.csproj" />
+    <ProjectReference Include="..\StudentAPI.Services\StudentAPI.Services.csproj" />
   </ItemGroup>
 
 </Project>

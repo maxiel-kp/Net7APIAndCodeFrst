@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using StudentAPI.Controllers.Extensions;
 using StudentAPI.DALs;
+using MediatR;
 
 namespace StudentAPI
 {
@@ -21,6 +22,8 @@ namespace StudentAPI
                             .AddUnitOfWork()
                             .AddBusinessServices()
                             .AddDatabase(builder.Configuration);
+
+            //builder.Services.AddMediatR(typeof(Program));
 
             var app = builder.Build();
             // Configure the HTTP request pipeline.

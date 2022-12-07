@@ -3,7 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using StudentAPI.DALs;
 using StudentAPI.Models;
 using StudentAPI.DTOs.Requests;
-using StudentAPI.Services;
+using StudentAPI.Services.Queries;
+using MediatR;
 
 namespace MaxCodeFirst.API.Controllers
 {
@@ -13,11 +14,13 @@ namespace MaxCodeFirst.API.Controllers
     {
         private readonly PracticeDbContext _dbContext;
         private readonly IStudentService _service;
+        private readonly IMediator _mediator;
 
-        public StudentController(PracticeDbContext dbContext, IStudentService service)
+        public StudentController(PracticeDbContext dbContext, IStudentService service, IMediator mediator)
         {
             _dbContext = dbContext;
             _service = service;
+            _mediator = mediator;
         }
 
         [HttpGet]
@@ -71,6 +74,13 @@ namespace MaxCodeFirst.API.Controllers
         {
             var users = await _service.SearchAsync(request);
             return Ok(users);
+        }
+
+        [HttpGet("get_by_cqrs")]
+        public async Task<IActionResult> GetByCQRSAsync([FromQuery] GetUserRequest request)
+        {
+            var result = await _mediator.Send(request);
+            return Ok(result);
         }
     }
 }
