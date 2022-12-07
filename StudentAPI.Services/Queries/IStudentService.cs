@@ -1,7 +1,7 @@
 ﻿using StudentAPI.DTOs.DTOs;
 using StudentAPI.DTOs.Requests;
 
-namespace StudentAPI.Services
+namespace StudentAPI.Services.Queries
 {
     public interface IStudentService
     {

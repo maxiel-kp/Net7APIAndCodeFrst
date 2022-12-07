@@ -11,17 +11,15 @@ namespace StudentAPI.Controllers.Extensions
     {
         public static IServiceCollection AddRepositories(this IServiceCollection services)
         {
-            return services
-                .AddScoped(typeof(IAsyncRepository<>), typeof(RepositoryBase<>))
-                .AddScoped<IStudentQueryRepository, StudentQueryRepository>()
+            return services.AddScoped<IStudentQueryRepository, StudentQueryRepository>()
+                //.AddScoped(typeof(IAsyncRepository<>), typeof(RepositoryBase<>))
                 //.AddScoped<IDepartmentRepository, DepartmentRepository>()
                 ;
         }
 
         public static IServiceCollection AddUnitOfWork(this IServiceCollection services)
         {
-            return services
-                .AddScoped<IUnitOfWork, UnitOfWork>();
+            return services.AddScoped<IUnitOfWork, UnitOfWork>();
         }
 
         public static IServiceCollection AddDatabase(this IServiceCollection services

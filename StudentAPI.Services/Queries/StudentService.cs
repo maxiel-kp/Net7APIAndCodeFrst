@@ -9,13 +9,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudentAPI.Services
+namespace StudentAPI.Services.Queries
 {
     public class StudentService : IStudentService
     {
         private readonly IStudentQueryRepository _repository;
 
-        public StudentService(IStudentQueryRepository repository) 
+        public StudentService(IStudentQueryRepository repository)
         {
             _repository = repository;
         }
@@ -30,8 +30,8 @@ namespace StudentAPI.Services
             {
                 Id = query.Id,
                 FirstName = query.FirstName,
-                Age= query.Age,
-                Gender= query.Gender,
+                Age = query.Age,
+                Gender = query.Gender,
                 LastName = query.LastName
             };
 

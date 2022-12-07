@@ -67,7 +67,7 @@ namespace MaxCodeFirst.API.Controllers
 
 
         [HttpGet("get_by_service")]
-        public async Task<IActionResult> GetByService([FromQuery] GetUserRequest request)
+        public async Task<IActionResult> GetByServiceAsync([FromQuery] GetUserRequest request)
         {
             var users = await _service.SearchAsync(request);
             return Ok(users);

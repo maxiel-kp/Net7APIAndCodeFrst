@@ -1,6 +1,6 @@
 ﻿using StudentAPI.DALs;
 
-namespace StudentAPI.Services
+namespace StudentAPI.Services.Commands
 {
     public class BaseService
     {
