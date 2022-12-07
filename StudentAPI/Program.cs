@@ -1,8 +1,6 @@
-
-using Microsoft.EntityFrameworkCore;
-using StudentAPI.Controllers.Extensions;
-using StudentAPI.DALs;
 using MediatR;
+using StudentAPI.Controllers.Extensions;
+using System.Reflection;
 
 namespace StudentAPI
 {
@@ -21,9 +19,8 @@ namespace StudentAPI
             builder.Services.AddRepositories()
                             .AddUnitOfWork()
                             .AddBusinessServices()
-                            .AddDatabase(builder.Configuration);
-
-            //builder.Services.AddMediatR(typeof(Program));
+                            .AddDatabase(builder.Configuration)
+                            .RegisterMediatRDependencies();
 
             var app = builder.Build();
             // Configure the HTTP request pipeline.
@@ -36,6 +33,9 @@ namespace StudentAPI
             app.UseHttpsRedirection();
             app.UseAuthorization();
             app.MapControllers();
+
+            
+
 
             app.Run();
         }

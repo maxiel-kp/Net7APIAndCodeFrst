@@ -2,8 +2,11 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using StudentAPI.CQRS.Queries;
 using StudentAPI.DALs;
 using StudentAPI.DALs.Queries;
+using StudentAPI.DTOs.DTOs;
+using StudentAPI.DTOs.Requests;
 using StudentAPI.Services.Queries;
 
 namespace StudentAPI.Controllers.Extensions
@@ -31,7 +34,15 @@ namespace StudentAPI.Controllers.Extensions
            )
         {
             return services
-                .AddScoped<IStudentService,StudentService>();
+                .AddScoped<IStudentService, StudentService>();
+        }
+
+        //AddMediatR
+        public static void RegisterMediatRDependencies(this IServiceCollection services)
+        {
+            services.AddMediatR(typeof(StudentQueryHandler).Assembly)
+                .AddTransient<IRequestHandler<GetUserRequest, UserInfoDTO>, StudentQueryHandler>();
+            //.AddMediatR(AppDomain.CurrentDomain.GetAssemblies());
         }
     }
 }
