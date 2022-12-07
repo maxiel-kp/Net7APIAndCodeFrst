@@ -31,8 +31,7 @@ namespace StudentAPI.Controllers.Extensions
         public static IServiceCollection AddBusinessServices(this IServiceCollection services
            )
         {
-            return services
-                .AddScoped<StudentService>();
+            return services.AddScoped<IStudentService,StudentService>();
         }
     }
 }
