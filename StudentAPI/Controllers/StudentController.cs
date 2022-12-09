@@ -12,17 +12,17 @@ namespace MaxCodeFirst.API.Controllers
     [Route("[controller]")]
     public class StudentController : ControllerBase
     {
-        private readonly PracticeDbContext _dbContext;
-        private readonly IStudentService _service;
+        /*private readonly PracticeDbContext _dbContext;
+        private readonly IStudentService _service;*/
         private readonly IMediator _mediator;
 
-        public StudentController(PracticeDbContext dbContext, IStudentService service, IMediator mediator)
+        public StudentController(IMediator mediator)//PracticeDbContext dbContext, IStudentService service, 
         {
-            _dbContext = dbContext;
-            _service = service;
+           /* _dbContext = dbContext;
+            _service = service;*/
             _mediator = mediator;
         }
-
+        /*
         [HttpGet]
         public async Task<IActionResult> GetAsync()
         {
@@ -75,13 +75,14 @@ namespace MaxCodeFirst.API.Controllers
             var users = await _service.SearchAsync(request);
             return Ok(users);
         }
-
+        */
         [HttpGet("get_by_cqrs")]
         public async Task<IActionResult> GetByCQRSAsync([FromQuery] GetUserRequest request)
         {
             var result = await _mediator.Send(request);
             return Ok(result);
         }
+
 
         [HttpGet("get_by_cqrs_no_service")]
         public async Task<IActionResult> GetByCQRSNoServiceAsync([FromQuery] GetStudentRequest request)
