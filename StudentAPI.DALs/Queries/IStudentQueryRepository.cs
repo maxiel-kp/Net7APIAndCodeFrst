@@ -6,5 +6,7 @@ namespace StudentAPI.DALs.Queries
     public interface IStudentQueryRepository
     {
         public Task<Students> GetAsync(Expression<Func<Students, bool>> expression);
+        public Task<List<Students>> GetAllAsync();
+        public  Task<IQueryable<Students>> GetByProcAsync();
     }
 }

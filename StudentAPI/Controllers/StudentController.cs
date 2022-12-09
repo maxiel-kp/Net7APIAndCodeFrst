@@ -82,5 +82,19 @@ namespace MaxCodeFirst.API.Controllers
             var result = await _mediator.Send(request);
             return Ok(result);
         }
+
+        [HttpGet("get_by_cqrs_no_service")]
+        public async Task<IActionResult> GetByCQRSNoServiceAsync([FromQuery] GetStudentRequest request)
+        {
+            var result = await _mediator.Send(request);
+            return Ok(result);
+        }
+
+        [HttpGet("get_by_proc")]
+        public async Task<IActionResult> GetByStoreProcAsync([FromQuery] GetStudentProcRequest request)
+        {
+            var result = await _mediator.Send(request);
+            return Ok(result);
+        }
     }
 }
